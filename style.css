@@ -15,6 +15,10 @@ body{
 
 }
 
+img{
+    object-fit:cover;
+}
+
 .rgbKineticSlider{
     display: block;
     position: relative;
