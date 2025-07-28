@@ -4,6 +4,7 @@ body{
     margin: 0;
     background: #000;
     color: #fff;
+    overflow-x: hidden;
 }
 
 .slider {
@@ -41,7 +42,7 @@ nav a{
     background: rgba(255, 255, 255, 0.1); /* light glassy look */
     backdrop-filter: blur(10px);          /* glass blur effect */
     -webkit-backdrop-filter: blur(10px);  /* Safari support */    
-    border: 1px solid #ffffff;
+    border: 1px solid #ffffff33;
     border-radius: 50px;
     color: #d8d8d8;
 }
@@ -54,6 +55,209 @@ nav a.next{
 nav a.prev{
     left: 70vw;
 }
+
+
+
+.top-nav {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 50px;
+    padding: 8px 22px;
+    border: 1px solid #ffffff33;
+  }
+.hamburger-menu {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 50px;
+    padding: 10px 18px;
+    border: 1px solid #ffffff33;
+  }
+  
+  .hamburger-icon {
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .bottom-bar {
+    position: absolute;
+    bottom: 0px !important;
+    width: 100%;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid #ffffff22;
+    color: #fff;
+    font-size: 14px;
+  }
+  
+  .left-text{
+    width: 70%;
+  }
+  .right-text{
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+  }
+  .right-text a.Copyright{
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+  }
+  .social-icons  {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .social-icons a {
+    margin-left: 15px;
+
+  }
+  
+  .social-icons img {
+    width: 18px;
+    height: 18px;
+    filter: invert(100%);
+  }
+
+  .social-icons a:hover img {
+    transform: scale(1.1);
+    transition: 0.2s;
+  }
+  
+
+
+
+  /* Login Panel */
+.login-panel {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 450px;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px 30px;
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.2);
+    transition: right 0.5s ease;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .login-panel.open {
+    right: 0;
+  }
+  
+  .login-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    color: #fff;
+  }
+  
+  .login-content h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+  }
+  
+  .login-content input {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+  }
+  
+  .login-content input::placeholder {
+    color: #ccc;
+  }
+  
+  .login-btn {
+    background: #fff;
+    color: #000;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .login-btn:hover {
+    background: #eee;
+  }
+  
+  .divider {
+    text-align: center;
+    color: #aaa;
+    margin: 15px 0;
+  }
+  
+  .google-btn {
+    background: #fff;
+    color: #000;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .google-btn img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .google-btn:hover {
+    background: #eee;
+  }
+  
+  .close-panel {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    font-size: 28px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1000;
+    transition: 0.3s;
+  }
+  
+  .close-panel:hover {
+    transform: rotate(90deg);
+  }
+  
 
 @media screen and (max-width: 52em) {
     nav a {
