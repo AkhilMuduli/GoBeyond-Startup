@@ -12,12 +12,21 @@
     <script src="https://cdn.jsdelivr.net/npm/@pixi/filter-rgb-split@3.1.1/dist/filter-rgb-split.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/hmongouachon/rgbKineticSlider@master/js/rgbKineticSlider.js"></script>
 
-    <title>Gobeyond</title>
+    <title>rgbKineticSlider - Demo 1</title>
     </head>
       
 
 <body>
+<div class="top-nav">
+    <div class="logo"><img src="logo (2).png" alt=""></div>
+</div>
+<!-- Hamburger Menu -->
+<div class="hamburger-menu">
+    <div class="hamburger-icon">&#9776;</div>
+  </div>
 
+
+  
   <div class="slider">
     <div id="rgbKineticSlider" class="rgbKineticSlider">
       <nav>
@@ -27,6 +36,41 @@
     </div>
   </div>
 
+
+<!-- Login Panel -->
+<div class="login-panel" id="loginPanel">
+    <button class="close-panel" id="closePanel">&times;</button>
+    <div class="login-content">
+      <h2>Welcome Back</h2>
+      <input type="email" placeholder="Email" />
+      <input type="password" placeholder="Password" />
+      <button class="login-btn">Login</button>
+      <div class="divider">OR</div>
+      <button class="google-btn">
+        <img src="icons/google.svg" alt="Google" />
+        Continue with Google
+      </button>
+    </div>
+  </div>
+  
+
+  
+
+  <!-- Bottom Bar -->
+<footer class="bottom-bar">
+    <div class="left-text">Creator Stack, Reimagined!</div>
+    <div class="right-text">
+    <div class="social-icons">
+      <a href="#"><img src="icons\iconmonstr-instagram-11.svg" alt="Instagram"></a>
+      <a href="#"><img src="icons\icons8-x-50.png" alt="X"></a>
+      <a href="#"><img src="icons\iconmonstr-youtube-6.svg" alt="YouTube"></a>
+      <a href="#"><img src="icons\iconmonstr-linkedin-3.svg" alt="LinkedIn"></a>
+    </div>
+    <a href="#" class="Copyright">©2025 @gobeyond Pvt. Ltd.</a>
+</div>
+  </footer>
+
+  
   <script>
     const desktopImages = ["s1.png", "s2.png"];
     const mobileImages = ["s1m.jpg", "s2m.jpg"];
@@ -43,16 +87,16 @@
       itemsTitles: texts,
   
       backgroundDisplacementSprite: "Effect1.avif",
-      cursorDisplacementSprite: "https://raw.githubusercontent.com/hmongouachon/rgbKineticSlider/master/img/displace-circle.png",
+      cursorDisplacementSprite: "displace-circle.png",
   
       cursorScaleIntensity: 0.3,
       cursorMomentum: 0.14,
   
       swipe: true,
       swipeDistance: window.innerWidth * 0.4,
-      swipeScaleIntensity: 2,
+      swipeScaleIntensity: 1.5,
   
-      slideTransitionDuration: 1.4,
+      slideTransitionDuration: 2,
       transitionScaleIntensity: 30,
       transitionScaleAmplitude: 160,
   
@@ -68,7 +112,32 @@
       textsRgbEffect: true,
       textsRgbIntensity: 3
     });
+
+
   </script>
   
+
+
+  <script>
+    const hamburger = document.querySelector(".hamburger-icon");
+    const loginPanel = document.getElementById("loginPanel");
+    const closePanel = document.getElementById("closePanel");
+  
+    hamburger.addEventListener("click", () => {
+      loginPanel.classList.add("open");
+    });
+  
+    closePanel.addEventListener("click", () => {
+      loginPanel.classList.remove("open");
+    });
+  
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") loginPanel.classList.remove("open");
+    });
+  </script>
+  
+
+
+
 </body>
 </html>
