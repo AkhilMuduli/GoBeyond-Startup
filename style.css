@@ -413,9 +413,10 @@ nav a.prev{
     body{
         overflow-x: hidden !important;
     }
-    nav a {
+       nav a {
         top: auto;
         bottom: 12rem;
+        padding: 10px 15px;
     }
 
     nav a.prev{
