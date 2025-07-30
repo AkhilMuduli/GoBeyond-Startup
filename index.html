@@ -12,7 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@pixi/filter-rgb-split@3.1.1/dist/filter-rgb-split.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/hmongouachon/rgbKineticSlider@master/js/rgbKineticSlider.js"></script>
 
-    <title>rgbKineticSlider - Demo 1</title>
+    <title>gobeyond</title>
     </head>
       
 
@@ -25,7 +25,12 @@
     <div class="hamburger-icon">&#9776;</div>
   </div>
 
-
+  <!-- <div class="waitlist-button">
+    <a href="#waitlist" class="btn-waitlist">
+      Join Waitlist <span>→</span>
+    </a>
+  </div> -->
+  
   
   <div class="slider">
     <div id="rgbKineticSlider" class="rgbKineticSlider">
@@ -38,7 +43,7 @@
 
 
 <!-- Login Panel -->
-<div class="login-panel" id="loginPanel">
+<!-- <div class="login-panel" id="loginPanel">
     <button class="close-panel" id="closePanel">&times;</button>
     <div class="login-content">
       <h2>Welcome Back</h2>
@@ -52,7 +57,30 @@
       </button>
     </div>
   </div>
+   -->
+
   
+  <!-- Waitlist Toggle Button -->
+<button class="waitlist-toggle" id="waitlistToggle">
+    <span class="text">Join Waitlist</span>
+    <span class="arrow join">➜</span>
+  </button>
+  
+  <!-- Waitlist Panel -->
+  <div class="waitlist-panel" id="waitlistPanel">
+    <div class="waitlist-content">
+      <h2>Leave your info so we can save your spot on Beyond’s early creator list.</h2>
+      <p>Early access to campaigns – Priority to brand deals – New creator connects</p>
+      <form id="waitlistForm" class="waitlistForm">
+        <input type="email" placeholder="Email ID*" required />
+        <input type="tel" placeholder="Phone Number" />
+        <input type="text" placeholder="Instagram Link" />
+        <button type="submit" class="submit-btn">
+          <span>Submit</span> <span class="arrow">➜</span>
+        </button>
+      </form>
+    </div>
+  </div>
 
   
 
@@ -73,7 +101,7 @@
   
   <script>
     const desktopImages = ["s1.png", "s2.png"];
-    const mobileImages = ["s1m.jpg", "s2m.jpg"];
+    const mobileImages = ["s1m.png", "s2m.png"];
     const texts = [""];
   
     const isMobile = window.innerWidth <= 768;
@@ -137,7 +165,16 @@
   </script>
   
 
-
+  <script>
+    const toggleBtn = document.getElementById("waitlistToggle");
+    const panel = document.getElementById("waitlistPanel");
+  
+    toggleBtn.addEventListener("click", () => {
+      panel.classList.toggle("active");
+      toggleBtn.classList.toggle("collapsed");
+    });
+  </script>
+  
 
 </body>
 </html>

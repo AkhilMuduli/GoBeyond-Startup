@@ -7,6 +7,7 @@ body{
     overflow-x: hidden;
 }
 
+/*----------------- slider ---------------*/
 .slider {
     width: 100%;
     height: 100vh;
@@ -14,11 +15,6 @@ body{
     position: relative;
 
 }
-
-img{
-    object-fit:cover;
-}
-
 .rgbKineticSlider{
     display: block;
     position: relative;
@@ -32,6 +28,10 @@ canvas{
     display: block;
     top: 0;
     left: 0;
+}
+
+img{
+    object-fit: cover;
 }
 
 nav a{
@@ -51,16 +51,13 @@ nav a{
     color: #d8d8d8;
 }
 
-
 nav a.next{
-    right: 10vw;
+    right: 5vw;
 }
 
 nav a.prev{
     left: 70vw;
 }
-
-
 
 .top-nav {
     position: absolute;
@@ -145,13 +142,13 @@ nav a.prev{
   
 
 
+/* ------------------Login Panel---------------- */
 
-  /* Login Panel */
-.login-panel {
+/* .login-panel {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 350px;
+    width: 30%;
     height: 100vh;
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(18px);
@@ -260,10 +257,162 @@ nav a.prev{
   
   .close-panel:hover {
     transform: rotate(90deg);
+  } */
+
+
+
+  /* === Join Waitlist Button === */
+.waitlist-toggle {
+    position: fixed;
+    top: 46vh;
+    right: 5vw;
+    z-index: 1000;
+    background: white;
+    color: black;
+    padding: 6px 6px 6px 22px;
+    border-radius: 50px;
+    border: none;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  }
+
+  .join{
+    padding: 10px;
+    background-color: #B41202;
+    border-radius: 50%;
+  }
+  
+  .waitlist-toggle.collapsed {
+    right: 96%;
+    /* width: 54px; */
+    padding: 6px;
+  }
+  
+  .waitlist-toggle.collapsed .text {
+    display: none;
+  }
+  
+  .waitlistForm{
+    padding: 30px;
+
+    border-radius:60px 50px;
+    box-shadow: 0 12px 90px rgba(0, 0, 0, 0.08), 
+            0 6px 12px rgba(0, 0, 0, 0.04);
+
+  }
+  
+  /* === Waitlist Panel === */
+  .waitlist-panel {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 90%;
+    height: 100vh;
+    background: white;
+    z-index: 999;
+    transition: right 0.5s ease;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .arrow{
+    color: #fff;
+  }
+
+  .waitlist-panel.active {
+    right: 0;
+  }
+  
+  /* === Form Container === */
+  .waitlist-content {
+    max-width: 600px;
+    width: 100%;
+    padding: 40px 30px;
+    text-align: center;
+  }
+  
+  .waitlist-content h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #000;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  
+  .waitlist-content p {
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  /* === Form Elements === */
+  .waitlist-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .waitlist-content input {
+    padding: 16px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    outline: none;
+    transition: border 0.3s;
+  }
+  
+  .waitlist-content input:focus {
+    border-color: #B41202;
+  }
+  
+  /* === Submit Button === */
+  .waitlist-content button.submit-btn {
+    background-color: #f16161;
+    color: white;
+    padding: 16px 22px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s;
+  }
+  
+  .waitlist-content button.submit-btn:hover {
+    background-color: #B41202;
+  }
+  
+  .waitlist-content button.submit-btn .icon {
+    background: white;
+    color: #f16161;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
   }
   
 
+  /* === Responsive Styles === */
+
 @media screen and (max-width: 52em) {
+    body{
+        overflow-x: hidden !important;
+    }
     nav a {
         top: auto;
         bottom: 12rem;
@@ -272,4 +421,24 @@ nav a.prev{
     nav a.prev{
         left: 10vw;
     }
+
+    .login-panel{
+        width: 70%;
+    }
+
+    .waitlist-panel {
+        width: 100%;
+      }
+    
+      .waitlist-toggle.collapsed {
+        right: calc(100% - 54px);
+      }
+    
+      .waitlist-content h2 {
+        font-size: 22px;
+      }
+    
+      .waitlist-content p {
+        font-size: 14px;
+      }
 }
