@@ -49,6 +49,7 @@ nav a{
     border: 1px solid #ffffff33;
     border-radius: 50px;
     color: #d8d8d8;
+    display: none;
 }
 
 nav a.next{
@@ -94,7 +95,7 @@ nav a.prev{
     position: absolute;
     bottom: 0px !important;
     width: 100%;
-    padding: 15px 20px;
+    padding: 30px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -103,14 +104,15 @@ nav a.prev{
     -webkit-backdrop-filter: blur(10px);
     border-top: 1px solid #ffffff22;
     color: #fff;
-    font-size: 14px;
+    font-size: large;
   }
   
   .left-text{
-    width: 70%;
+    width: 40%;
+    font-size: x-large;
   }
   .right-text{
-    width: 30%;
+    width: 50%;
     display: flex;
     justify-content: space-around;
   }
@@ -118,6 +120,7 @@ nav a.prev{
     color: #fff;
     text-decoration: none;
     margin-right: 20px;
+    font-size: large;
   }
   .social-icons  {
     display: flex;
@@ -130,8 +133,8 @@ nav a.prev{
   }
   
   .social-icons img {
-    width: 18px;
-    height: 18px;
+    width: 23px;
+    height: 23px;
     filter: invert(100%);
   }
 
@@ -139,126 +142,6 @@ nav a.prev{
     transform: scale(1.1);
     transition: 0.2s;
   }
-  
-
-
-/* ------------------Login Panel---------------- */
-
-/* .login-panel {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 30%;
-    height: 100vh;
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-    border-left: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 40px 30px;
-    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.2);
-    transition: right 0.5s ease;
-    z-index: 999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .login-panel.open {
-    right: 0;
-  }
-  
-  .login-content {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    color: #fff;
-  }
-  
-  .login-content h2 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    font-weight: 600;
-    color: #fff;
-  }
-  
-  .login-content input {
-    background: rgba(255, 255, 255, 0.1);
-    border: none;
-    padding: 12px 15px;
-    margin-bottom: 15px;
-    border-radius: 8px;
-    color: #fff;
-    font-size: 14px;
-    outline: none;
-  }
-  
-  .login-content input::placeholder {
-    color: #ccc;
-  }
-  
-  .login-btn {
-    background: #fff;
-    color: #000;
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.3s;
-  }
-  
-  .login-btn:hover {
-    background: #eee;
-  }
-  
-  .divider {
-    text-align: center;
-    color: #aaa;
-    margin: 15px 0;
-  }
-  
-  .google-btn {
-    background: #fff;
-    color: #000;
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  
-  .google-btn img {
-    width: 20px;
-    height: 20px;
-  }
-  
-  .google-btn:hover {
-    background: #eee;
-  }
-  
-  .close-panel {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: transparent;
-    border: none;
-    font-size: 28px;
-    color: #fff;
-    cursor: pointer;
-    z-index: 1000;
-    transition: 0.3s;
-  }
-  
-  .close-panel:hover {
-    transform: rotate(90deg);
-  } */
-
 
 
   /* === Join Waitlist Button === */
@@ -273,7 +156,7 @@ nav a.prev{
     border-radius: 50px;
     border: none;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 16px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -283,13 +166,13 @@ nav a.prev{
   }
 
   .join{
-    padding: 10px;
+    padding: 18px;
     background-color: #B41202;
     border-radius: 50%;
   }
   
   .waitlist-toggle.collapsed {
-    right: 96%;
+    right: 101%;
     /* width: 54px; */
     padding: 6px;
   }
@@ -312,7 +195,7 @@ nav a.prev{
     position: fixed;
     top: 0;
     right: -100%;
-    width: 90%;
+    width: 97%;
     height: 100vh;
     background: white;
     z-index: 999;
@@ -407,16 +290,131 @@ nav a.prev{
   }
   
 
+  .whatsapp-wrapper {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .country-code {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    height: 52px;
+    background: #fff;
+  }
+  
+  .country-code select {
+    border: none;
+    background: transparent;
+    font-size: 16px;
+    margin-left: 8px;
+    outline: none;
+    appearance: none;
+    color: #000;
+    cursor: pointer;
+  }
+  
+  .flag-icon {
+    width: 24px;
+    height: 18px;
+    object-fit: contain;
+    border-radius: 3px;
+  }
+  
+  .phone-number {
+    flex: 1;
+    padding: 16px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    outline: none;
+    transition: border 0.3s;
+  }
+  
+  .phone-number:focus {
+    border-color: #B41202;
+  }
+
+
+  .waitlist-close {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    background: transparent;
+    border: none;
+    font-size: 28px;
+    color: #333;
+    cursor: pointer;
+    z-index: 1001;
+    transition: opacity 0.3s ease;
+  }
+  
+  .waitlist-close:hover {
+    opacity: 0.6;
+  }
+
+
+
+
+
+  .mouse-follower {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    pointer-events: none;
+    background: rgba(255, 255, 255, 0.156);  /* base: transparent white */
+    mix-blend-mode: difference;           /* invert effect */
+    color: black;
+    font-size: 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: transform 0.15s ease, width 0.5s ease, height 0.5s ease, background 0.5s ease;
+    opacity: 1;
+    overflow: hidden;
+    pointer-events: none; /* This makes it completely unclickable */
+
+  }
+  
+  .mouse-follower span {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    user-select: none;
+    font-family: sans-serif;
+  }
+  
+  .mouse-follower.pulse {
+    width: 100px;
+    height: 100px;
+    background: #fff;
+    /* mix-blend-mode: normal; */
+  }
+  
+  .mouse-follower.pulse span {
+    opacity: 1;
+  }
+  
+  
+
   /* === Responsive Styles === */
 
 @media screen and (max-width: 52em) {
     body{
         overflow-x: hidden !important;
     }
-       nav a {
+    nav a {
         top: auto;
         bottom: 12rem;
         padding: 10px 15px;
+        display: none;
     }
 
     nav a.prev{
