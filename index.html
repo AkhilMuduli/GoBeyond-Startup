@@ -17,24 +17,19 @@
       
 
 <body>
+
+    <!-- Logo  -->
 <div class="top-nav">
     <div class="logo"><img src="logo (2).png" alt=""></div>
 </div>
-<!-- Hamburger Menu -->
-<div class="hamburger-menu">
-    <div class="hamburger-icon">&#9776;</div>
-  </div>
 
-  <!-- <div class="waitlist-button">
-    <a href="#waitlist" class="btn-waitlist">
-      Join Waitlist <span>→</span>
-    </a>
-  </div> -->
-  
-  
+<!-- distortion effect  -->
   <div class="slider">
     <div id="rgbKineticSlider" class="rgbKineticSlider">
       <nav>
+        <div class="mouse-follower main-nav next" id="mouseFollower" >
+            <span>Double Tap</span>
+          </div>
         <a href="#" class="main-nav prev" data-nav="previous">Prev</a>
         <a href="#" class="main-nav next" data-nav="next">Next</a>
       </nav>
@@ -42,24 +37,6 @@
   </div>
 
 
-<!-- Login Panel -->
-<!-- <div class="login-panel" id="loginPanel">
-    <button class="close-panel" id="closePanel">&times;</button>
-    <div class="login-content">
-      <h2>Welcome Back</h2>
-      <input type="email" placeholder="Email" />
-      <input type="password" placeholder="Password" />
-      <button class="login-btn">Login</button>
-      <div class="divider">OR</div>
-      <button class="google-btn">
-        <img src="icons/google.svg" alt="Google" />
-        Continue with Google
-      </button>
-    </div>
-  </div>
-   -->
-
-  
   <!-- Waitlist Toggle Button -->
 <button class="waitlist-toggle" id="waitlistToggle">
     <span class="text">Join Waitlist</span>
@@ -68,13 +45,28 @@
   
   <!-- Waitlist Panel -->
   <div class="waitlist-panel" id="waitlistPanel">
+    <button class="waitlist-close" id="waitlistClose">&times;</button>
     <div class="waitlist-content">
       <h2>Leave your info so we can save your spot on Beyond’s early creator list.</h2>
       <p>Early access to campaigns – Priority to brand deals – New creator connects</p>
       <form id="waitlistForm" class="waitlistForm">
         <input type="email" placeholder="Email ID*" required />
-        <input type="tel" placeholder="Phone Number" />
-        <input type="text" placeholder="Instagram Link" />
+        
+        <div class="whatsapp-wrapper">
+            <div class="country-code">
+              <img src="https://flagcdn.com/w40/in.png" alt="India Flag" class="flag-icon">
+              <select name="country" id="countryCode">
+                <option value="+91">+91</option>
+                <!-- <option value="+1">+1</option>
+                <option value="+44">+44</option> -->
+                <!-- Add more country codes as needed -->
+              </select>
+            </div>
+            <input type="tel" placeholder="10-digit WhatsApp Number" class="phone-number" maxlength="10" pattern="[0-9]{10}" />
+          </div>
+          
+        <input type="text" placeholder="Instagram Link" required/>
+        <input type="text" placeholder="YouTube Link" />
         <button type="submit" class="submit-btn">
           <span>Submit</span> <span class="arrow">➜</span>
         </button>
@@ -87,6 +79,7 @@
   <!-- Bottom Bar -->
 <footer class="bottom-bar">
     <div class="left-text">Creator Stack, Reimagined!</div>
+
     <div class="right-text">
     <div class="social-icons">
       <a href="#"><img src="icons\iconmonstr-instagram-11.svg" alt="Instagram"></a>
@@ -95,13 +88,14 @@
       <a href="#"><img src="icons\iconmonstr-linkedin-3.svg" alt="LinkedIn"></a>
     </div>
     <a href="#" class="Copyright">©2025 @gobeyond Pvt. Ltd.</a>
-</div>
+   </div>
+
   </footer>
 
   
   <script>
-    const desktopImages = ["s1.png", "s2.png"];
-    const mobileImages = ["s1m.png", "s2m.png"];
+    const desktopImages = [ "s1.png", "s2.png", "s3.jpeg"];
+    const mobileImages = [ "s1m.png", "s2m.png","s3m.jpeg"];
     const texts = [""];
   
     const isMobile = window.innerWidth <= 768;
@@ -122,14 +116,14 @@
   
       swipe: true,
       swipeDistance: window.innerWidth * 0.4,
-      swipeScaleIntensity: 1.5,
+      swipeScaleIntensity: 0.5,
   
       slideTransitionDuration: 2,
       transitionScaleIntensity: 30,
       transitionScaleAmplitude: 160,
   
       nav: true,
-      navElement: ".main-nav",
+    //   navElement: "body",
   
       imagesRgbEffect: false,
   
@@ -145,7 +139,7 @@
   </script>
   
 
-
+<!-- 
   <script>
     const hamburger = document.querySelector(".hamburger-icon");
     const loginPanel = document.getElementById("loginPanel");
@@ -163,18 +157,131 @@
       if (e.key === "Escape") loginPanel.classList.remove("open");
     });
   </script>
-  
+   -->
 
   <script>
     const toggleBtn = document.getElementById("waitlistToggle");
     const panel = document.getElementById("waitlistPanel");
+    const panelClose = document.getElementById("waitlistClose");
   
     toggleBtn.addEventListener("click", () => {
-      panel.classList.toggle("active");
+      panel.classList.add("active");
       toggleBtn.classList.toggle("collapsed");
     });
+    panelClose.addEventListener("click", () => {
+      panel.classList.remove("active");
+      toggleBtn.classList.toggle("collapsed");
+    });
+
+    
   </script>
-  
+<!-- 
+
+<script>
+
+const follower = document.querySelector('.mouse-follower');
+let mouseX = 0, mouseY = 0;
+let posX = 0, posY = 0;
+
+// Smooth follow animation
+function followMouse() {
+  posX += (mouseX - posX) * 0.9;
+  posY += (mouseY - posY) * 0.9;
+  follower.style.transform = `translate3d(${posX}px, ${posY}px, 0)`;
+  requestAnimationFrame(followMouse);
+}
+followMouse();
+
+// Track cursor position
+document.addEventListener('mousemove', (e) => {
+  mouseX = e.clientX - 40;
+  mouseY = e.clientY - 40;
+});
+
+// Periodic grow animation
+setInterval(() => {
+  follower.classList.add('grow');
+  setTimeout(() => {
+    follower.classList.remove('grow');
+  }, 400);
+}, 4000);
+
+
+</script> -->
+
+
+
+<script>
+
+const follower = document.getElementById('mouseFollower');
+let mouseX = 0, mouseY = 0;
+let currentX = 0, currentY = 0;
+
+// Smooth follow effect
+function animateFollower() {
+  currentX += (mouseX - currentX) * 0.1;
+  currentY += (mouseY - currentY) * 0.1;
+  follower.style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
+  requestAnimationFrame(animateFollower);
+}
+animateFollower();
+
+// Track mouse
+document.addEventListener('mousemove', (e) => {
+  mouseX = e.clientX - follower.offsetWidth / 2;
+  mouseY = e.clientY - follower.offsetHeight / 2;
+});
+
+// Pulse every 4 seconds
+setInterval(() => {
+  follower.classList.add('pulse');
+  setTimeout(() => {
+    follower.classList.remove('pulse');
+  }, 1200); // long enough for text to be read
+}, 7000);
+
+
+</script>
+
+
+
+<script>
+  let clickCount = 0;
+  let clickTimer = null;
+
+  function handleDoubleClick() {
+    const nextBtn = document.querySelector(".main-nav.next");
+    if (nextBtn) nextBtn.click(); // Triggers the same behavior as clicking "Next"
+  }
+
+  // Desktop: double-click
+  document.addEventListener("click", () => {
+    clickCount++;
+    if (clickCount === 1) {
+      clickTimer = setTimeout(() => {
+        clickCount = 0;
+      }, 400);
+    } else if (clickCount === 2) {
+      clearTimeout(clickTimer);
+      clickCount = 0;
+      handleDoubleClick();
+    }
+  });
+
+  // Mobile: double-tap
+  document.addEventListener("touchend", () => {
+    clickCount++;
+    if (clickCount === 1) {
+      clickTimer = setTimeout(() => {
+        clickCount = 0;
+      }, 400);
+    } else if (clickCount === 2) {
+      clearTimeout(clickTimer);
+      clickCount = 0;
+      handleDoubleClick();
+    }
+  });
+</script>
 
 </body>
 </html>
