@@ -17,12 +17,13 @@
       
 
 <body>
-
     <!-- Logo  -->
-<div class="top-nav">
+<div class="header no-follow">
+  <div class="top-nav">
     <div class="logo"><img src="logo (2).png" alt=""></div>
 </div>
 
+</div>
 <!-- distortion effect  -->
   <div class="slider">
     <div id="rgbKineticSlider" class="rgbKineticSlider">
@@ -38,13 +39,13 @@
 
 
   <!-- Waitlist Toggle Button -->
-<button class="waitlist-toggle" id="waitlistToggle">
+<button class="waitlist-toggle no-follow" id="waitlistToggle">
     <span class="text">Join Waitlist</span>
     <span class="arrow join">➜</span>
   </button>
   
   <!-- Waitlist Panel -->
-  <div class="waitlist-panel" id="waitlistPanel">
+  <div class="waitlist-panel no-follow" id="waitlistPanel">
     <button class="waitlist-close" id="waitlistClose">&times;</button>
     <div class="waitlist-content">
       <h2>Leave your info so we can save your spot on Beyond’s early creator list.</h2>
@@ -77,7 +78,7 @@
   
 
   <!-- Bottom Bar -->
-<footer class="bottom-bar">
+<footer class="bottom-bar no-follow">
     <div class="left-text">Creator Stack, Reimagined!</div>
 
     <div class="right-text">
@@ -94,8 +95,8 @@
 
   
   <script>
-    const desktopImages = [ "s1.png", "s2.png", "s3.jpeg"];
-    const mobileImages = [ "s1m.png", "s2m.png","s3m.jpeg"];
+    const desktopImages = [ "s1.png", "s2.png", "s3.png", "s4.png"];
+    const mobileImages = [ "s1m.png", "s2m.png","s3m.jpeg", "s4.png"];
     const texts = [""];
   
     const isMobile = window.innerWidth <= 768;
@@ -165,7 +166,7 @@
     const panelClose = document.getElementById("waitlistClose");
   
     toggleBtn.addEventListener("click", () => {
-      panel.classList.add("active");
+      panel.classList.toggle("active");
       toggleBtn.classList.toggle("collapsed");
     });
     panelClose.addEventListener("click", () => {
@@ -237,8 +238,23 @@ setInterval(() => {
   follower.classList.add('pulse');
   setTimeout(() => {
     follower.classList.remove('pulse');
-  }, 1200); // long enough for text to be read
+  }, 4200); // long enough for text to be read
 }, 7000);
+
+
+
+
+// Hide on unwanted areas
+document.querySelectorAll('.no-follow').forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    follower.classList.add('hidden');
+  });
+
+  el.addEventListener('mouseleave', () => {
+    follower.classList.remove('hidden');
+  });
+});
+
 
 
 </script>
@@ -253,6 +269,9 @@ setInterval(() => {
     const nextBtn = document.querySelector(".main-nav.next");
     if (nextBtn) nextBtn.click(); // Triggers the same behavior as clicking "Next"
   }
+
+  setInterval(handleDoubleClick, 9000);
+
 
   // Desktop: double-click
   document.addEventListener("click", () => {
@@ -282,6 +301,8 @@ setInterval(() => {
     }
   });
 </script>
+
+
 
 </body>
 </html>
