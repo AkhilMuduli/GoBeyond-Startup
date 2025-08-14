@@ -164,14 +164,18 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   currentMode = getMode();
   initSlider(currentMode);
-  window.addEventListener('resize', ()=>{
-    const nm = getMode();
-    if (nm !== currentMode){
-      currentMode = nm;
-      initSlider(currentMode);
-    } else {
-      applyCoverScaling(sliderInstance);
-    }
+  imagesLoaded(container, () => {
+  applyCoverScaling(sliderInstance);
+});
+
+  // window.addEventListener('resize', ()=>{
+  //   const nm = getMode();
+  //   if (nm !== currentMode){
+  //     currentMode = nm;
+  //     initSlider(currentMode);
+  //   } else {
+  //     applyCoverScaling(sliderInstance);
+  //   }
   });
 
   /* Mouse follower */
@@ -236,3 +240,4 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 </body>
 </html>
+
