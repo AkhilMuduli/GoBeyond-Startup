@@ -163,6 +163,8 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(()=>applyCoverScaling(sliderInstance),150);
   }
   currentMode = getMode();
+  initSlider(currentMode);
+  
   window.addEventListener('resize', ()=>{
     const nm = getMode();
     if (nm !== currentMode){
@@ -235,5 +237,3 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 </body>
 </html>
-
-
