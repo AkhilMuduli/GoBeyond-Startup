@@ -163,19 +163,14 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(()=>applyCoverScaling(sliderInstance),150);
   }
   currentMode = getMode();
-  initSlider(currentMode);
-  imagesLoaded(container, () => {
-  applyCoverScaling(sliderInstance);
-});
-
-  // window.addEventListener('resize', ()=>{
-  //   const nm = getMode();
-  //   if (nm !== currentMode){
-  //     currentMode = nm;
-  //     initSlider(currentMode);
-  //   } else {
-  //     applyCoverScaling(sliderInstance);
-  //   }
+  window.addEventListener('resize', ()=>{
+    const nm = getMode();
+    if (nm !== currentMode){
+      currentMode = nm;
+      initSlider(currentMode);
+    } else {
+      applyCoverScaling(sliderInstance);
+    }
   });
 
   /* Mouse follower */
@@ -240,4 +235,5 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 </body>
 </html>
+
 
